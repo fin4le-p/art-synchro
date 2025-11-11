@@ -77,7 +77,7 @@ export default function RoomPage({ params }: RoomPageProps) {
   const currentStrokeRef = useRef<Stroke | null>(null);
 
   const [brushColor, setBrushColor] = useState("#000000");
-  const [brushWidth, setBrushWidth] = useState(4);
+  const [brushWidth, setBrushWidth] = useState(8);
 
   const [previewSrc, setPreviewSrc] = useState<string | null>(null);
 
@@ -512,7 +512,7 @@ export default function RoomPage({ params }: RoomPageProps) {
       : "bg-slate-900";
 
   const brushColors = ["#000000", "#e11d48", "#22c55e", "#3b82f6", "#f97316"];
-  const brushWidths = [2, 4, 8];
+  const brushWidths = [8, 16, 32];
 
   return (
     <main className={`min-h-screen text-white ${bgColor}`}>

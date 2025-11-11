@@ -208,7 +208,7 @@ export default function HomePage() {
           rel="noopener noreferrer"
           className="text-blue-400 underline hover:text-blue-300"
         >github</a>
-        <p>art-synchro v1.0.0</p>
+        <p>art-synchro v1.0.1</p>
         <p>配信等での利用にあたって、特別な許可は不要です。
           なお、本サービスの利用により発生したいかなるトラブルや損害についても、当方は一切の責任を負いません。</p>
       </footer>
