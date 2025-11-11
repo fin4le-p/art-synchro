@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Room {
+  id             String   @id @default(cuid())
+  passcode       String?  @db.VarChar(50)
+  answerSeconds  Int
+  successCount   Int      @default(0)
+  failCount      Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  players        Player[]
+  rounds         Round[]
+}
+
+model Player {
+  id         String   @id @default(cuid())
+  name       String
+  isLeader   Boolean  @default(false)
+  submitted  Boolean  @default(false)
+  lastSeenAt DateTime @default(now())
+  room       Room     @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  roomId     String
+  answers    Answer[]
+}
+
+model Round {
+  id         String   @id @default(cuid())
+  index      Int
+  question   String
+  status     String   // waiting | answering | revealed
+  startedAt  DateTime
+  result     String?  // success | fail
+  room       Room     @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  roomId     String
+  answers    Answer[]
+}
+
+model Answer {
+  id        String   @id @default(cuid())
+  imageUrl  String   // base64データ or CDN URL
+  player    Player   @relation(fields: [playerId], references: [id], onDelete: Cascade)
+  playerId  String
+  round     Round    @relation(fields: [roundId], references: [id], onDelete: Cascade)
+  roundId   String
+}
+
+model Question {
+  id        String   @id @default(cuid())
+  text      String   @unique   // ← これ追加
+  createdAt DateTime @default(now())
+}
