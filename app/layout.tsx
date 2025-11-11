@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
+const siteUrl = new URL("https://art-synchro.nakano6.com");
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -14,16 +16,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: siteUrl,
   title: "絵心伝心 - パーティーゲーム！",
   description: "以心伝心ゲームの絵心伝心！",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
+    type: "website",
+    url: siteUrl,
     title: "絵心伝心 - パーティーゲーム！",
     description: "以心伝心ゲームの絵心伝心！",
-    url: "https://art-synchro.nakano6.com",
-    siteName: "art-synchro",
+    siteName: "art-synchro.nakano6.com",
     images: [
       {
         url: "/ogp.png",
@@ -33,14 +46,12 @@ export const metadata: Metadata = {
       },
     ],
     locale: "ja_JP",
-    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "絵心伝心 - パーティーゲーム！",
     description: "以心伝心ゲームの絵心伝心！",
     images: ["/ogp.png"],
-    creator: "@your_twitter_id",
   },
 };
 
