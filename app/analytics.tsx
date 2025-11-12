@@ -3,7 +3,6 @@
 import { Suspense, useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
-// ---- any を使わない gtag 型定義 ----
 type Gtag = {
   (command: "js", date: Date): void;
   (command: "config", targetId: string, config?: Record<string, unknown>): void;
@@ -18,29 +17,45 @@ declare global {
   }
 }
 
-// useSearchParams を使う部分は Suspense 内で実行させる
 function AnalyticsInner() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   useEffect(() => {
-    if (!gaId || typeof window === "undefined" || !window.gtag) return;
+    if (!gaId || typeof window === "undefined") return;
 
-    const url =
-      pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
+    let timeoutId: number | undefined;
 
-    window.gtag("event", "page_view", {
-      page_location: window.location.origin + url,
-      page_path: pathname,
-      page_title: document.title,
-    });
+    const sendPageView = () => {
+      if (typeof window.gtag !== "function") {
+        // gtag がまだ生えてない場合はちょっと待ってリトライ
+        timeoutId = window.setTimeout(sendPageView, 200);
+        return;
+      }
+
+      const url =
+        pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
+
+      window.gtag("event", "page_view", {
+        page_location: window.location.origin + url,
+        page_path: pathname,
+        page_title: document.title,
+      });
+    };
+
+    sendPageView();
+
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
   }, [pathname, searchParams, gaId]);
 
   return null;
 }
 
-// デフォルトエクスポートは Suspense で包む
 export default function Analytics() {
   return (
     <Suspense fallback={null}>
