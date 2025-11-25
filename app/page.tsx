@@ -200,6 +200,79 @@ export default function HomePage() {
             </p>
           </section>
         </div>
+        <section className="relative z-10 w-full max-w-6xl mx-auto mt-20 mb-32 space-y-6">
+
+          <div className="rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-slate-800 px-6 py-10 shadow-[0_18px_40px_rgba(15,23,42,0.6)]">
+            <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-400 bg-clip-text text-transparent">
+              絵心伝心（art-synchro）とは？
+            </h2>
+            <p className="mt-4 text-slate-300 leading-relaxed text-sm md:text-base">
+              絵心伝心は、オンラインで友だちや配信視聴者と一緒に楽しめる
+              「お題 → 絵 → 絵…」の伝言ゲームです。インストール不要で、
+              ブラウザだけあれば誰でも参加可能。PC・スマホの両方に対応しており、
+              URL を共有するだけですぐに遊べます。
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-slate-800 px-6 py-10 shadow-[0_18px_40px_rgba(15,23,42,0.6)] space-y-6">
+            <h3 className="text-xl md:text-2xl font-semibold text-cyan-300">
+              主な特徴
+            </h3>
+            <ul className="list-disc pl-5 space-y-2 text-slate-300 text-sm md:text-base">
+              <li>インストール不要で、誰でもすぐに参加できる</li>
+              <li>PC・スマホどちらからでもプレイ可能</li>
+              <li>ルームURLを貼るだけで参加OK、配信者＆リスナーにも最適</li>
+              <li>制限時間やパスコードを自由に設定できる</li>
+              <li>最後に全員の絵をまとめて再生し、大盛りあがり</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-slate-800 px-6 py-10 shadow-[0_18px_40px_rgba(15,23,42,0.6)] space-y-6">
+            <h3 className="text-xl md:text-2xl font-semibold text-cyan-300">
+              遊び方（3ステップ）
+            </h3>
+            <ol className="list-decimal pl-5 space-y-3 text-slate-300 text-sm md:text-base">
+              <li>上のフォームからルームを作成します。</li>
+              <li>生成されたURLを、友達や配信視聴者に共有します。</li>
+              <li>制限時間内に絵を描き、最後に全員の絵をまとめて再生します。</li>
+            </ol>
+          </div>
+
+          <div className="rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-slate-800 px-6 py-10 shadow-[0_18px_40px_rgba(15,23,42,0.6)] space-y-6">
+            <h3 className="text-xl md:text-2xl font-semibold text-cyan-300">
+              利用シーン
+            </h3>
+            <p className="text-slate-300 leading-relaxed text-sm md:text-base">
+              配信企画、友だち同士の通話、オンライン飲み会、サークル活動、
+              オフ会のアイスブレイクなど、初対面でも盛り上がるゲームとしても人気です。
+              手軽に遊べるため、長時間の配信の“つなぎ”としても使いやすい形式です。
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-slate-800 px-6 py-10 shadow-[0_18px_40px_rgba(15,23,42,0.6)] space-y-6">
+            <h3 className="text-xl md:text-2xl font-semibold text-cyan-300">
+              よくある質問（FAQ）
+            </h3>
+
+            <div className="space-y-4 text-sm md:text-base">
+              <div>
+                <p className="font-medium text-slate-200">Q. スマホでも描けますか？</p>
+                <p className="text-slate-400">はい、スマホ・タブレットどちらでも遊べます。</p>
+              </div>
+
+              <div>
+                <p className="font-medium text-slate-200">Q. 配信で使っても大丈夫？</p>
+                <p className="text-slate-400">はい、特別な許可は不要です。</p>
+              </div>
+
+              <div>
+                <p className="font-medium text-slate-200">Q. 何人まで参加できますか？</p>
+                <p className="text-slate-400">12人まで参加可能です。</p>
+              </div>
+            </div>
+          </div>
+
+        </section>
       </div>
       <footer className="absolute bottom-3 left-4 text-[11px] text-slate-500/70 select-none">
         <a
@@ -208,7 +281,7 @@ export default function HomePage() {
           rel="noopener noreferrer"
           className="text-blue-400 underline hover:text-blue-300"
         >github</a>
-        <p>art-synchro v1.0.1</p>
+        <p>art-synchro v1.0.2</p>
         <p>配信等での利用にあたって、特別な許可は不要です。
           なお、本サービスの利用により発生したいかなるトラブルや損害についても、当方は一切の責任を負いません。</p>
       </footer>

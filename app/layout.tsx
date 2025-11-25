@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: "絵心伝心 - パーティーゲーム！",
-  description: "以心伝心ゲームの絵心伝心！",
+  description: "以心伝心ゲームの絵心伝心！「お題 → 絵 → 絵…」で以心伝心できる、ブラウザだけで遊べるオンラインお絵かき伝言ゲーム。配信・VC・オフ会の場を盛り上げたいときにぴったりです。ルームを作成してURLを共有するだけで、PC・スマホからすぐ参加できます。",
   robots: {
     index: true,
     follow: true,
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     title: "絵心伝心 - パーティーゲーム！",
-    description: "以心伝心ゲームの絵心伝心！",
+    description: "以心伝心ゲームの絵心伝心！「お題 → 絵 → 絵…」で以心伝心できる、ブラウザだけで遊べるオンラインお絵かき伝言ゲーム。配信・VC・オフ会の場を盛り上げたいときにぴったりです。ルームを作成してURLを共有するだけで、PC・スマホからすぐ参加できます。",
     siteName: "art-synchro.nakano6.com",
     images: [
       {
