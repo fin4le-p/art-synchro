@@ -200,7 +200,7 @@ export default function HomePage() {
             </p>
           </section>
         </div>
-        <section className="relative z-10 w-full max-w-6xl mx-auto mt-20 mb-32 space-y-6">
+        <section className="relative z-10 w-full max-w-6xl mx-auto mt-20 mb-12 space-y-6">
 
           <div className="rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-slate-800 px-6 py-10 shadow-[0_18px_40px_rgba(15,23,42,0.6)]">
             <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-400 bg-clip-text text-transparent">
@@ -276,11 +276,11 @@ export default function HomePage() {
       </div>
       <footer className="absolute bottom-3 left-4 text-[11px] text-slate-500/70 select-none">
         <a
-          href="https://github.com/fin4le-p/art-synchro"
+          href="https://nakano6.com/privacy-policy"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-400 underline hover:text-blue-300"
-        >github</a>
+        >プライバシーポリシー</a>
         <p>art-synchro v1.0.2</p>
         <p>配信等での利用にあたって、特別な許可は不要です。
           なお、本サービスの利用により発生したいかなるトラブルや損害についても、当方は一切の責任を負いません。</p>
